@@ -1,0 +1,15 @@
+body {
+
+    background-color: #bce0f5;
+
+    color: black;
+
+    font-family: Comic Sans MS;
+
+}
+.bg-custom {
+    background-color: #f8bdcf !important;
+}
+.bg-custom .nav-link{
+    color: #175e31 !important;
+}

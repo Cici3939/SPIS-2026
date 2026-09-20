@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}ASCII ART!!{% endblock %}
+
+{% block content %}
+
+<p>Enter an item and click "submit" to see it</p>
+
+<form action="/ascart_result">
+  <p>What would you like to see? <input type="str" name="art" value="banana"></p>
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
