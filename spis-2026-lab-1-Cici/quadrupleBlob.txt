@@ -1,0 +1,112 @@
+# back & forth sweeping up
+
+0 xxxS -> E 0 # -> not corner
+0 xxxx -> E 0
+0 xExx -> W 1 # stop east wall
+0 Nxxx -> E 4 # -> north wall
+0 xxWx -> E 0 # 0 for west wall
+
+#1 xExx -> W 1 # 1 for east wall
+1 xxx* -> W 1 # <- no wall
+1 xxWx -> x 2 # stop west wall
+1 xExx -> W 0 
+
+# back & forth sweeping up AFTER MAZE
+"""
+10 xxxS -> E 10 # -> not corner
+10 xxxx -> E 10
+10 xEx* -> W 11 # stop east wall
+10 Nxxx -> E 14 # -> north wall
+#10 xxWx -> E 10 # 0 for west wall
+
+#1 xExx -> W 1 # 1 for east wall
+11 xxx* -> W 11 # <- no wall
+11 xxWx -> E 12 # stop west wall
+11 xExx -> W 10 
+11 xxWS -> E 6
+"""
+
+10 xxxS -> E 10 # -> not corner
+10 xxxx -> E 10
+10 xExx -> W 11 # stop east wall
+10 NExx -> E 14 # -> north wall
+10 xxWx -> E 10 # 0 for west wall
+10 xExS -> N 10
+
+#1 xExx -> W 11 # 1 for east wall
+11 xxx* -> W 11 # <- no wall
+11 xxWx -> x 12 # stop west wall
+11 xExx -> W 10 
+
+# N corners
+
+# NW corner
+
+0 NxWx -> x 8 # found corner, start crawling down
+
+1 NxWx -> S 8
+
+# follow N wall until no N wall
+4 Nxxx -> E 4
+4 xxxx -> N 1
+
+14 Nxxx -> E 14
+14 xxxx -> N 11
+
+# NE corner
+
+0 NExx -> x 4 # found corner, start crawling down
+1 NExx -> W 4
+
+# crawl down E
+
+4 *Exx -> S 4
+4 xExS -> x 1
+# 4 xxxx -> x 0
+
+# crawl up W
+"""
+4 xxWx -> N 4
+4 NxWx -> E 0
+"""
+
+# crawl down W
+
+# facing N
+5 xE** -> N 5
+5 *x** -> E 6
+5 NEx* -> W 7
+
+# facing E
+6 *x*S -> E 6
+6 ***x -> S 8
+6 xE*S -> W 10
+
+# facing W
+7 N*x* -> W 7
+7 x*** -> N 5
+7 N*Wx -> S 8
+
+# facing S
+8 **Wx -> S 8
+8 **x* -> W 7
+8 *xWS -> E 6
+
+# S corners
+
+# SW corner
+
+1 xxWS -> N 0 # found corner, start sweeping up
+
+# SE corner
+
+0 xExS -> x 1 # found corner, start sweeping up
+1 xExS -> W 1
+# 9 **** -> N 4
+
+# switch rows going up 
+
+2 x*** -> N 0 
+2 N*** -> S 3
+
+12 x*** -> N 11

@@ -1,0 +1,11 @@
+# find top 
+
+0 x*** -> N 0 
+0 N*** -> X 1
+
+# back & forth sweeping down
+
+1 *x** -> E 1
+1 *E** -> W 2
+2 **x* -> W 2
+2 **W* -> S 1
